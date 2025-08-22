@@ -4,13 +4,11 @@ import app from "./app";
 
 let server: Server;
 
-
 const startServer = async () => {
   try {
     await mongoose.connect(
-      "mongodb+srv://ph-tour-management-system:xgfe3cJFWAJXVEAu@cluster0.rgora5h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+      "mongodb+srv://ph-tour-management-system:xgfe3cJFWAJXVEAu@cluster0.rgora5h.mongodb.net/ph-tour-management-system?retryWrites=true&w=majority&appName=Cluster0"
     );
-
     console.log("connected to DB!");
 
     server = app.listen(5000, () => {
@@ -21,7 +19,4 @@ const startServer = async () => {
   }
 };
 
-startServer()
-
-
-
+startServer();
