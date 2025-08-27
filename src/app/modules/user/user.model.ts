@@ -1,4 +1,4 @@
-import { Schema } from "mongoose";
+import { model, Schema } from "mongoose";
 import { isActive, IUser , Role,IAuthProvider} from "./user.interface";
 
 const authProviderSchema = new Schema <IAuthProvider>({
@@ -34,4 +34,4 @@ const userSchema = new Schema<IUser>({
     versionKey : false
 })
 
-export default userSchema;
+export const User = model<IUser>("User",userSchema)
